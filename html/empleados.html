@@ -27,20 +27,36 @@
       <h2>Lista de empleados registrados</h2>
       <div class="div">
         <div class="buscar">
-          <input type="text" placeholder="Buscar empleado por nombre" id="buscar" />
-          <div class="filtro">
+          <input
+            type="text"
+            placeholder="Buscar empleado por nombre"
+            id="buscar"
+          />
+        </div>
+
+        <div class="filtros">
+          <div class="filtro" id="btn-filtro">
             Filtos
             <i class="fa-solid fa-sliders"></i>
+            <!-- <select name="" id="">
+              <option value="Nombre">Nombre</option>
+            </select> -->
           </div>
+
+          <ul id="tipoFiltro">
+            <li >Nombre</li>
+            <li >Salario</li>
+            <li >Departamento</li>
+          </ul>
         </div>
       </div>
 
       <div class="empleados" id="empleados"></div>
 
       <div class="btn">
-        <a href="./index.html" type="button" class="volver"> Volver </a>
+        <a href="../index.html" type="button" class="volver"> Volver </a>
       </div>
     </main>
-    <script src="./empleados.js"></script>
+    <script src="../js/empleados.js"></script>
   </body>
 </html>

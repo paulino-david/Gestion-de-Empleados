@@ -1,39 +1,52 @@
 const empleadosDiv = document.getElementById("empleados")
 const buscar = document.getElementById("buscar")
+const btn_filtro=document.getElementById("btn-filtro")
+const mostrarTipoFiltro=document.getElementById("tipoFiltro")
 
-const listaEmpleados = JSON.parse(localStorage.getItem("Empleados"))
+const listas=document.querySelectorAll("li")
 
-listaEmpleados.forEach(empleado => {
-    empleadosDiv.innerHTML += `
 
-    <div class="empleado">
-            <div class="top_tarjeta">
-            <i class="fa-solid fa-ellipsis-vertical"></i>
-        </div>
 
-        <h3>
+const mostrarEmpleados = () => {
+    const listaEmpleados = JSON.parse(localStorage.getItem("Empleados"))
 
-            ${empleado.nombre[0]}
-        
-        </h3>
+    listaEmpleados.forEach(empleado => {
 
-        <div>
-            <h4>
-            ${empleado.nombre}
-            </h4>
-            <p>
-                Salario: € ${empleado.salario}
-            </p>
-            <p>
-                Departamento: ${empleado.departamento}
-            </p>
-
-        </div>
+        empleadosDiv.innerHTML += `
     
-    </div>
-    `
+        <div class="empleado" >
+            
+            <h3>
+    
+                ${empleado.nombre[0]}
+            
+            </h3>
+    
+            <div class="info">
+                <h4>
+                ${empleado.nombre}
+                </h4>
+                <p>
+                    Salario: € ${empleado.salario}
+                </p>
+                <p>
+                    Departamento: ${empleado.departamento}
+                </p>
+    
+            </div>
+    
+            <div class="operacionenes">
+                <i class="fa-solid fa-trash trash" id=${empleado.nombre}></i>
+                <i class="fa-solid fa-pencil edit" id=${empleado.nombre}></i>
+            </div>
+        
+        </div>
+        `
 
-});
+
+    });
+}
+mostrarEmpleados()
 const low = ""
 
 buscar.addEventListener("input", () => {
@@ -45,17 +58,13 @@ buscar.addEventListener("input", () => {
 
     <div class="empleado">
 
-        <div class="top_tarjeta">
-            <i class="fa-solid fa-ellipsis-vertical"></i>
-        </div>
-
         <h3>
 
             ${empleado.nombre[0]}
         
         </h3>
 
-        <div>
+        <div class="info">
             <h4>
             ${empleado.nombre}
             </h4>
@@ -67,10 +76,42 @@ buscar.addEventListener("input", () => {
             </p>
 
         </div>
+
+        <div class="operacionenes">
+            <i class="fa-solid fa-trash trash" id="borrar"></i>
+            <i class="fa-solid fa-pencil edit"></i>
+        </div>
     
     </div>
     `
     })
 })
 
+const borrar = document.querySelectorAll(".trash")
+let storage = JSON.parse(localStorage.getItem("Empleados"))
+
+borrar.forEach(boton => {
+    boton.addEventListener("click", (e) => {
+        e.preventDefault()
+        storage = storage.filter(empleado => empleado.nombre != boton.id)
+        console.log(boton.id)
+        localStorage.setItem("Empleados", JSON.stringify(storage))
+            
+        window.location.reload()
+    })
+
+})
+let flex=false
+btn_filtro.addEventListener("click",(e)=>{
+    e.preventDefault()
+    flex=flex?false:true
+    mostrarTipoFiltro.style.display=flex?"flex":"none"
+})
+
+listas.forEach(lista=>{
+    // console.log(lista)
+    lista.addEventListener("click",()=>{
+        buscar.placeholder="Buscar empleado por "+lista.textContent.toLowerCase()
+    })
+})
 

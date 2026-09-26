@@ -35,22 +35,67 @@ main
     width: 100%
     display: flex
     justify-content: center
+    gap: 1rem
+    align-item: center
+
+    .filtros
+        position: relative
+        display: flex
+        flex-direction: column
+        
+        ul
+            list-style: none
+            position: absolute
+            top: 4rem
+            flex-direction: column
+            gap: .5rem
+            padding: 1rem
+            background-color: #f5f5f5
+            box-shadow: -2px 2px 5px #3434343b
+            border-radius: .5rem
+            display: none
+
+            li
+                padding: .5rem
+                border-radius: .5rem
+                cursor: pointer
+
+                &:hover
+                    background-color: #34343413
+
+
+    .filtro
+        display: flex
+        align-items: center
+        gap: .5rem
+        padding: 0 .5rem
+        border-radius: .5rem
+        cursor: pointer
+        height: 3rem
+        margin-top: .3rem
+
+        &:hover
+            background-color: #3434340f
+
 .buscar
     display: flex
-    flex-direction: column
     justify-content: space-between
     border: solid 1px #55545433
     width: 30%
     border-radius: .5rem
     padding: .2rem
     margin-bottom: .5rem
+    background-color: #f5f5f5
     input
         font-size: 16px
         height: 2rem
         border: none
-        padding: 0.5rem
+        padding: .5rem
         outline: none
-        width: 96%
+        width: 100%
+        background-color: transparent
+
+
 
 .empleados
     flex-direction: row
@@ -70,22 +115,12 @@ main
         padding: 2rem 1rem
         border-radius: .5rem
         @include mixins.justify($direccion:column ,$tipo:center )
-        align-items: center
-        gap: 3rem
+        @include mixins.align($direccion:column ,$tipo:center )
+        gap: 1rem
         background-color: #f5f5f5b5
+        height: 15rem
 
-        .top_tarjeta
-            @include mixins.justify($tipo:end)
-            color: black
-            width: 100%
-            i
-                cursor: pointer
-                border-radius: 3rem
-                padding: .37rem .3rem
-
-                &:hover
-                    background-color: #0008011b
-
+        
         h3
             border-radius: 5rem
             width: 3rem
@@ -96,6 +131,35 @@ main
             padding: 1rem
             background-color: #9422907d
             color: white
-            font-size: xx-large
-        p
-            color: grey
+            font-size: xx-large      
+  
+        .info
+            p
+                color: grey
+            background-color: #3434340e
+            display: flex
+            flex-direction: column
+            gap: .5rem
+            padding: .5rem
+            width: 80%
+            border-radius: .5rem
+
+        .operacionenes
+            display: flex
+            flex-direction: row
+            justify-content: end
+            width: 100%
+            padding: .5rem
+            gap: 1rem
+
+            .trash,.edit
+                background-color: #d309091e
+                color: red
+                padding: .5rem
+                border-radius: .5rem
+                cursor: pointer
+            .edit
+                background-color: #00000012
+                color: black
+
+
