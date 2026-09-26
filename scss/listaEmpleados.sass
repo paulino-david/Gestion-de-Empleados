@@ -1,0 +1,101 @@
+@use "_mixins"
+*
+    margin: 0
+    padding: 0
+    font-family: "Poppins", sans-serif
+
+body
+    background-color: #0073a021
+
+h2
+    display: flex
+    align-items: center
+    padding: 2rem
+
+main
+    display: flex
+    flex-direction: column
+
+    .btn
+        display: flex
+        align-items: center
+        padding: .3rem 2rem
+    a
+        padding: 1rem
+        text-decoration: none
+        font-weight: 700
+        background-color: #ea052f22
+        height: 1rem
+        color: red
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: .5rem
+.div
+    width: 100%
+    display: flex
+    justify-content: center
+.buscar
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    border: solid 1px #55545433
+    width: 30%
+    border-radius: .5rem
+    padding: .2rem
+    margin-bottom: .5rem
+    input
+        font-size: 16px
+        height: 2rem
+        border: none
+        padding: 0.5rem
+        outline: none
+        width: 96%
+
+.empleados
+    flex-direction: row
+    flex-wrap: wrap
+    align-items: center
+    padding: 1rem 5rem
+    gap: 1.5rem
+    // max-height: 70%
+    // min-height: 70% !important
+    height: 29rem
+    overflow-y: scroll
+    @include mixins.justify($tipo:left)
+
+    .empleado
+        width: 20%
+        box-shadow: -2px 2px 5px #00000027
+        padding: 2rem 1rem
+        border-radius: .5rem
+        @include mixins.justify($direccion:column ,$tipo:center )
+        align-items: center
+        gap: 3rem
+        background-color: #f5f5f5b5
+
+        .top_tarjeta
+            @include mixins.justify($tipo:end)
+            color: black
+            width: 100%
+            i
+                cursor: pointer
+                border-radius: 3rem
+                padding: .37rem .3rem
+
+                &:hover
+                    background-color: #0008011b
+
+        h3
+            border-radius: 5rem
+            width: 3rem
+            height: 3rem
+            display: flex
+            align-items: center
+            justify-content: center
+            padding: 1rem
+            background-color: #9422907d
+            color: white
+            font-size: xx-large
+        p
+            color: grey

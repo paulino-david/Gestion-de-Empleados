@@ -1,0 +1,95 @@
+@use "_mixins" 
+@use "_variables"
+@use "_funciones"
+*
+    margin: 0
+    padding: 0
+    font-family: "Poppins", sans-serif
+
+    a
+        text-decoration: none
+        color: black
+
+body
+    // @include divFondoDegradado
+    // background: url("https://tse2.mm.bing.net/th/id/OIP.FnntabUnOULrwrr2zjjvBwHaEq?r=0&rs=1&pid=ImgDetMain&o=7&rm=3")
+    background-repeat: no-repeat
+    background-position: top
+    background-size: cover
+    backdrop-filter: blur(6px)
+    background-color: #0073a021
+    // background-color: #f5f5f5
+main
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 100dvh
+
+.topForm
+    @include mixins.justify($tipo:end )
+    padding: 0 .5rem
+    .burger
+        border-radius: 3rem
+        padding: .5rem
+        cursor: pointer
+        &:hover
+            background-color: #00000015
+    
+
+.div_f
+    display: flex
+    width: 50%
+    height: 60%
+    padding: 1rem
+    border-radius: variables.$borde+1.2
+    align-items: center
+    gap: 2rem
+    box-shadow: 2px 2px 10px #00000037
+
+    background-color: #eef7fbed
+
+.designe_img
+    box-shadow: 2px 2px 5px #00000055
+    height: 100%
+    width: 50%
+    border-radius: variables.$borde+1
+    @include mixins.divFondoDegradado
+    
+    
+.formulario
+    @include mixins.justify($direccion:column ,$tipo:center)
+
+    gap: 2rem
+    width: 50%
+    // @include mixins.align($direccion:column ,$tipo:center )
+    
+
+    .inputs
+        display: flex
+        flex-direction: column
+        gap: .5rem
+
+        @include mixins.inputt
+    
+    .error
+        color: red
+        font-size: small
+        text-align: center
+        height: .5rem
+            
+
+    .btn
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        button
+            width: 50%
+            padding: .5rem
+            border-radius: .2rem
+            border: none
+            background-color: variables.$azul
+            color: white
+            cursor: pointer
+            font-size: 16px
+            border-radius: .5rem

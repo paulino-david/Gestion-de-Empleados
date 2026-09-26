@@ -1,0 +1,43 @@
+@mixin divFondoDegradado
+    background: linear-gradient(120deg,
+    #c0c1c1 0%,
+    #2184ae65 30%,
+    #1593c9dc 55%,
+    #2184ae65 80%,
+    #ffffff 100%
+                )
+
+@mixin justify($direccion:row,$tipo)
+    display: flex
+    flex-direction: $direccion
+    justify-content: $tipo
+
+@mixin align($direccion:row,$tipo)
+    display: flex
+    flex-direction: $direccion
+    align-items: $tipo
+
+@mixin inputt
+    .input
+        height: 3rem
+        padding: 0 .5rem
+        border-radius: .5rem
+        width: 90%
+        border: solid 1px #00000030
+        background-color: white
+        @include justify($tipo:space-between )
+        @include align($tipo:center )
+        p
+            color: grey
+            font-size: larger
+            @include justify($tipo:left )
+            width: 1.5rem
+            @include align($tipo:center )
+
+        
+        input
+            width: 90%
+            height: 85%
+            border: none
+            outline: none       
+            font-size: 16px
