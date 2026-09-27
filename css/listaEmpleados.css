@@ -10,6 +10,7 @@ body {
 
 h2 {
   display: flex;
+  flex-direction: row;
   align-items: center;
   padding: 2rem;
 }
@@ -20,6 +21,7 @@ main {
 }
 main .btn {
   display: flex;
+  flex-direction: row;
   align-items: center;
   padding: 0.3rem 2rem;
 }
@@ -31,7 +33,10 @@ main a {
   height: 1rem;
   color: red;
   display: flex;
+  flex-direction: row;
   align-items: center;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   border-radius: 0.5rem;
 }
@@ -39,9 +44,12 @@ main a {
 .div {
   width: 100%;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   gap: 1rem;
-  align-item: center;
 }
 .div .filtros {
   position: relative;
@@ -70,6 +78,7 @@ main a {
 }
 .div .filtro {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 0.5rem;
   padding: 0 0.5rem;
@@ -84,6 +93,7 @@ main a {
 
 .buscar {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   border: solid 1px rgba(85, 84, 84, 0.2);
   width: 30%;
@@ -103,8 +113,9 @@ main a {
 }
 
 .empleados {
-  flex-direction: row;
   flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   padding: 1rem 5rem;
   gap: 1.5rem;
@@ -117,7 +128,6 @@ main a {
 .empleados .empleado {
   width: 20%;
   box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1529411765);
-  padding: 2rem 1rem;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -127,30 +137,38 @@ main a {
   align-items: center;
   gap: 1rem;
   background-color: rgba(245, 245, 245, 0.7098039216);
-  height: 15rem;
+  height: 20rem;
+  padding: 1rem;
 }
 .empleados .empleado h3 {
   border-radius: 5rem;
   width: 3rem;
   height: 3rem;
   display: flex;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   padding: 1rem;
   background-color: rgba(148, 34, 144, 0.4901960784);
   color: white;
   font-size: xx-large;
 }
-.empleados .empleado .info p {
-  color: grey;
-}
 .empleados .empleado .info {
   background-color: rgba(52, 52, 52, 0.0549019608);
+  width: 80%;
+  height: 5rem;
+  color: grey;
   display: flex;
   flex-direction: column;
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
   gap: 0.5rem;
   padding: 0.5rem;
-  width: 80%;
   border-radius: 0.5rem;
 }
 .empleados .empleado .operacionenes {
@@ -171,4 +189,18 @@ main a {
 .empleados .empleado .operacionenes .edit {
   background-color: rgba(0, 0, 0, 0.0705882353);
   color: black;
+}
+.empleados .error {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: grey;
+}
+.empleados .error i {
+  font-size: xx-large;
 }/*# sourceMappingURL=listaEmpleados.css.map */
